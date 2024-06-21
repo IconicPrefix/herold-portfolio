@@ -1,0 +1,34 @@
+.file-upload {
+  transition: 0.2s background-color ease;
+  &.is-dragover {
+    background-color: #70707057;
+  }
+
+  & > .uploading,
+  .success-upload {
+    display: none;
+  }
+}
+
+input {
+  border-style: none;
+  font-size: $font-m;
+  padding: $size-s $size-m;
+  color: $color-light-text;
+  background-color: $color-dark-text;
+  border-radius: $size-xs;
+}
+
+button {
+  border-style: none;
+  font-size: $font-m;
+  padding: $size-s $size-m;
+  color: $color-light-text;
+  background-color: $color-dark-text;
+  border-radius: $size-m;
+  cursor: pointer;
+
+  &:hover {
+    @include box-shadow($color-dark-text);
+  }
+}

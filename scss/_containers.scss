@@ -1,0 +1,92 @@
+@mixin card-panel($size: "normal") {
+  // border-style: auto;
+  border-width: calc($size-xs - 0.1em);
+  padding: $size-xs $size-s;
+  // border-color: au;
+  border-radius: $size-s;
+  @if $size == "extra-small" {
+    padding: $size-xxs $size-xs;
+  } @else if $size == "small" {
+    padding: $size-xs $size-s;
+  } @else if $size == "normal" {
+    padding: $size-s $size-m;
+  } @else if $size == "large" {
+    padding: $size-m $size-l;
+  } @else if $size == "extra-large" {
+    padding: $size-l $size-xl;
+  }
+}
+
+.grid {
+  display: grid;
+  row-gap: $size-s;
+  column-gap: $size-s;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.box {
+  display: flex;
+  @include card-panel();
+
+  &.v {
+    flex-direction: column;
+  }
+
+  &.panel {
+    @include card-panel("normal");
+
+    &-primary {
+      @extend .panel;
+      background-color: $color-primary;
+    }
+
+    &-dashed {
+      @extend .panel;
+      border-style: dashed;
+      border-color: $color-dark-text;
+    }
+
+    &.xs {
+      @include card-panel("extra-small");
+    }
+
+    &.s {
+      @include card-panel("small");
+    }
+    &.m {
+      @include card-panel("normal");
+    }
+
+    &.l {
+      @include card-panel("large");
+    }
+
+    &.xl {
+      @include card-panel("extra-large");
+    }
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.gap-xs {
+    gap: $size-xs;
+  }
+  &.gap-s {
+    gap: $size-s;
+  }
+  &.gap-m {
+    gap: $size-m;
+  }
+  &.gap-l {
+    gap: $size-l;
+  }
+  &.gap-xl {
+    gap: $size-xl;
+  }
+}
+
+.margin {
+  padding: $size-m;
+}

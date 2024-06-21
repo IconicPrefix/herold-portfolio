@@ -1,0 +1,18 @@
+@mixin box-shadow($bg-color: "transparent", $inset: "false") {
+
+  @if $bg-color== "transparent" {
+    @if $inset == "true" {
+      box-shadow: inset 0px 0px 10px 4px rgba(rgba(0, 0, 0, 0), 0);
+    }
+    @else {
+      box-shadow:0px 0px 10px 4px rgba(rgba(0, 0, 0, 0), 0);
+    }
+  } @else {
+    @if $inset == "true" {
+      box-shadow: inset 0px 0px 10px 4px rgba($bg-color, 0.4);
+    }
+    @else {
+      box-shadow:0px 0px 10px 4px rgba($bg-color, 0.4);
+    }
+  }
+}

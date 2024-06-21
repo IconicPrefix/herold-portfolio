@@ -1,0 +1,10 @@
+.text {
+  &-secondary {
+    @extend .text;
+    font-size: $font-s;
+  }
+
+  &.gray {
+    color: $color-mid-text;
+  }
+}
