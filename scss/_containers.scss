@@ -4,26 +4,37 @@
   padding: $size-xs $size-s;
   // border-color: au;
   border-radius: $size-s;
-  @if $size == "extra-small" {
+
+  @if $size =="extra-small" {
     padding: $size-xxs $size-xs;
-  } @else if $size == "small" {
+  }
+
+  @else if $size =="small" {
     padding: $size-xs $size-s;
-  } @else if $size == "normal" {
+  }
+
+  @else if $size =="normal" {
     padding: $size-s $size-m;
-  } @else if $size == "large" {
+  }
+
+  @else if $size =="large" {
     padding: $size-m $size-l;
-  } @else if $size == "extra-large" {
+  }
+
+  @else if $size =="extra-large" {
     padding: $size-l $size-xl;
   }
 }
-
-
 
 .grid {
   display: grid;
   row-gap: $size-s;
   column-gap: $size-s;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+  &.home {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .box {
@@ -55,6 +66,7 @@
     &.s {
       @include card-panel("small");
     }
+
     &.m {
       @include card-panel("normal");
     }
@@ -69,25 +81,33 @@
   }
 
   &.full-height {
-    height: 100vh;
+    height: 80vh;
   }
 
   &.align-center {
     align-items: center;
   }
 
+  &.justify-center {
+    justify-content: center;
+  }
+
   &.gap-xs {
     gap: $size-xs;
   }
+
   &.gap-s {
     gap: $size-s;
   }
+
   &.gap-m {
     gap: $size-m;
   }
+
   &.gap-l {
     gap: $size-l;
   }
+
   &.gap-xl {
     gap: $size-xl;
   }
@@ -97,6 +117,13 @@
   padding: $size-m;
 }
 
-body > .margin {
+body>.margin {
   margin-top: $size-l;
+}
+
+.portrait {
+  border-radius: 50%;
+  max-width: 30vh;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }

@@ -4,6 +4,22 @@
     font-size: $font-s;
   }
 
+  &-header {
+    @extend .text;
+    font-size: $font-l;
+    font-weight: bold;
+  }
+
+  &-big-header {
+    @extend .text;
+    font-size: $font-xl;
+    font-weight: bold;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
   &.gray {
     color: $color-mid-text;
   }

@@ -1,7 +1,18 @@
 .text-secondary {
   font-size: 0.875rem;
 }
-.text.gray, .gray.text-secondary {
+.text-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.text-big-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.text.center, .center.text-secondary, .center.text-header, .center.text-big-header {
+  text-align: center;
+}
+.text.gray, .gray.text-secondary, .gray.text-header, .gray.text-big-header {
   color: #4a484d;
 }
 
@@ -20,6 +31,9 @@ body {
   row-gap: 0.5em;
   column-gap: 0.5em;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.grid.home {
+  grid-template-columns: 1fr 1fr;
 }
 
 .box {
@@ -76,10 +90,13 @@ body {
   padding: 2em 4em;
 }
 .box.full-height {
-  height: 100vh;
+  height: 80vh;
 }
 .box.align-center {
   align-items: center;
+}
+.box.justify-center {
+  justify-content: center;
 }
 .box.gap-xs {
   gap: 0.25em;
@@ -103,6 +120,13 @@ body {
 
 body > .margin {
   margin-top: 2em;
+}
+
+.portrait {
+  border-radius: 50%;
+  max-width: 30vh;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .file-upload {
@@ -145,11 +169,12 @@ button:hover {
 }
 nav {
   box-shadow: 0px 0px 10px 4px rgba(34, 40, 49, 0.4);
+  background-color: #EEE3CB;
   padding: 0.25em 0.5em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
   top: 0px;
   width: 100%;
 }
@@ -162,6 +187,17 @@ nav span {
   display: flex;
   align-self: center;
   border-bottom: solid 3px transparent;
+}
+nav #burger-menu {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  nav li {
+    display: none;
+  }
+  nav #burger-menu {
+    display: flex;
+  }
 }
 nav li {
   text-decoration: none;
