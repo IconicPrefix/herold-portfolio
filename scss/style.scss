@@ -1,18 +1,31 @@
 @import "components";
 
+@keyframes swipedown {
+    100% {
+        transform: translate(0,0);
+    }
+}
+
 nav {
     @include box-shadow($color-dark-text);
     padding: $size-xs $size-s;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+
+    &.home {
+        transform: translateY(-100%);
+        animation: swipedown 1s ease 1s 1 forwards;
+    }
 
     span {
         padding: $size-xs $size-s;
         display: flex;
         align-self: center;
         border-bottom: solid 3px transparent;
-
     }
 
     li {
@@ -28,14 +41,13 @@ nav {
         border-bottom: solid 3px transparent;
 
         &:hover {
-            @include box-shadow($color-dark-text);
-            transform: scale(1.30);
-            // background-color: $color-dark-text;
+            border-bottom: solid 3px $color-accent;
         }
 
 
         &.active {
             border-bottom: solid 3px $color-accent;
+            font-weight: bold;
         }
 
     }
