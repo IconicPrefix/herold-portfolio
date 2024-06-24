@@ -219,7 +219,82 @@ body > .margin:first-of-type {
 .icon.html {
   content: url("../resources/icons/html.svg");
 }
+.icon.css {
+  content: url("../resources/icons/css.svg");
+}
+.icon.sass {
+  content: url("../resources/icons/sass.svg");
+}
+.icon.javascript {
+  content: url("../resources/icons/javascript.svg");
+}
+.icon.jquery {
+  content: url("../resources/icons/jquery.svg");
+}
+.icon.mysql {
+  content: url("../resources/icons/mysql.svg");
+}
+.icon.java {
+  content: url("../resources/icons/java.svg");
+}
+.icon.php {
+  content: url("../resources/icons/php.svg");
+}
+.icon.python {
+  content: url("../resources/icons/python.svg");
+}
+.icon.godot {
+  content: url("../resources/icons/godot.svg");
+}
+.icon.c {
+  content: url("../resources/icons/c.svg");
+}
+.icon.c-sharp {
+  content: url("../resources/icons/c-sharp.svg");
+}
+.icon.burger-menu {
+  content: url("../resources/icons/burger-menu.svg");
+}
+.icon.code {
+  content: url("../resources/icons/code.svg");
+}
+.icon.down-arrow {
+  content: url("../resources/icons/down-arrow.svg");
+}
+.icon.circle-dashed {
+  content: url("../resources/icons/circle-dashed.svg");
+}
 
+.hovering-anim {
+  animation: hovering 1.5s ease 9s infinite forwards;
+}
+
+@keyframes hovering {
+  0% {
+    transform: translateY(0%);
+  }
+  60% {
+    transform: translateY(-35%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.rotate {
+  width: 30vh;
+  height: 30vh;
+  position: absolute;
+  animation: rotating 30s linear 0s infinite both;
+}
+
+@keyframes rotating {
+  0% {
+    transform: scale(1.25) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.25) rotate(360deg);
+  }
+}
 .file-upload {
   transition: 0.2s background-color ease;
 }
@@ -259,6 +334,7 @@ button:hover {
   }
 }
 nav {
+  z-index: 100;
   box-shadow: 0px 0px 10px 4px rgba(34, 40, 49, 0.4);
   background-color: #EEE3CB;
   padding: 0.25em 0.5em;
@@ -271,13 +347,26 @@ nav {
 }
 nav.home {
   transform: translateY(-100%);
-  animation: swipedown 1s ease 1s 1 forwards;
+  animation: swipedown 1s ease 7s 1 forwards;
 }
 nav span {
   padding: 0.25em 0.5em;
   display: flex;
   align-self: center;
   border-bottom: solid 3px transparent;
+  flex-grow: 1;
+  transform: translateY(5px);
+}
+nav span .icon {
+  padding: 0.25em 0.5em;
+  display: flex;
+  flex-grow: 0;
+  align-self: center;
+  width: fit-content;
+  width: auto;
+  transform: translateY(-3.5px);
+  height: 1.2rem;
+  width: 1.2rem;
 }
 nav #burger-menu {
   display: none;
@@ -316,4 +405,74 @@ nav ul {
 }
 nav .icon {
   width: 100%;
+}
+
+.greeting {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+  font-size: 4em;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(-25%);
+  animation: slidein 5s ease 1.5s 1 forwards;
+}
+
+body.home > div {
+  opacity: 0;
+  animation: fadein 1.5s ease 7.5s 1 forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slidein {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-2%);
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+}
+footer {
+  background-color: #222831;
+  margin-top: 4em;
+  width: 100%;
+  padding: 1em 0px;
+}
+footer > div {
+  color: #EEEEEE;
+  font-size: 0.75rem;
+}
+footer > div > span {
+  color: #EEEEEE;
+  font-size: 0.9em;
 }

@@ -7,6 +7,7 @@
 }
 
 nav {
+    z-index: 100;
     @include box-shadow($color-dark-text);
     background-color: $color-background;
     padding: $size-xs $size-s;
@@ -19,7 +20,7 @@ nav {
 
     &.home {
         transform: translateY(-100%);
-        animation: swipedown 1s ease 1s 1 forwards;
+        animation: swipedown 1s ease 7s 1 forwards;
     }
 
     span {
@@ -27,6 +28,21 @@ nav {
         display: flex;
         align-self: center;
         border-bottom: solid 3px transparent;
+        // background-color: red;
+        flex-grow: 1;
+        transform: translateY(5px);
+
+        .icon {
+            padding: $size-xs $size-s;
+            display: flex;
+            flex-grow: 0;
+            align-self: center;
+            width: fit-content;
+            width: auto;
+            transform: translateY(-3.5px);
+            height: 1.2rem;
+            width: 1.2rem;
+        }
     }
 
     #burger-menu {
@@ -43,7 +59,7 @@ nav {
         }
     }
 
-    
+
 
     li {
         text-decoration: none;
@@ -77,4 +93,89 @@ nav {
     .icon {
         width: 100%;
     }
+}
+
+.greeting {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+    font-size: $size-xl;
+    position: absolute;
+    // font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-25%);
+
+    animation: slidein 5s ease 1.5s 1 forwards;
+}
+
+body.home {
+    & > div {
+        opacity: 0;
+        animation: fadein 1.5s ease 7.5s 1 forwards;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slidein {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateY(-2%);
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+}
+
+footer {
+    background-color: $color-dark-text;
+    margin-top: $size-xl;
+    width: 100%;
+
+    & > div {
+        color: $color-light-text;
+        font-size: $font-xs;
+
+        & > span {
+            color: $color-light-text;
+            font-size: 0.9em;
+        }
+    }
+
+    padding: $size-m 0px;
 }
