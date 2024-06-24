@@ -10,6 +10,12 @@
     font-weight: bold;
   }
 
+  &-subheader {
+    @extend .text;
+    font-size: $font-m;
+    font-weight: bold;
+  }
+
   &-big-header {
     @extend .text;
     font-size: $font-xl;

@@ -5,14 +5,18 @@
   font-size: 1.25rem;
   font-weight: bold;
 }
+.text-subheader {
+  font-size: 1rem;
+  font-weight: bold;
+}
 .text-big-header {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.text.center, .center.text-secondary, .center.text-header, .center.text-big-header {
+.text.center, .center.text-secondary, .center.text-header, .center.text-subheader, .center.text-big-header {
   text-align: center;
 }
-.text.gray, .gray.text-secondary, .gray.text-header, .gray.text-big-header {
+.text.gray, .gray.text-secondary, .gray.text-header, .gray.text-subheader, .gray.text-big-header {
   color: #4a484d;
 }
 
@@ -26,6 +30,11 @@ body {
   background-color: #EEE3CB;
 }
 
+.debug-box {
+  background-color: red;
+  border: solid 2px blue;
+}
+
 .grid {
   display: grid;
   row-gap: 0.5em;
@@ -34,6 +43,9 @@ body {
 }
 .grid.home {
   grid-template-columns: 1fr 1fr;
+}
+.grid.techstack {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 4fr));
 }
 
 .box {
@@ -115,10 +127,15 @@ body {
 }
 
 .margin {
-  padding: 1em;
+  padding: 2em 4em;
 }
 
-body > .margin {
+@media only screen and (max-width: 650px) {
+  .margin {
+    padding: 1em 2em;
+  }
+}
+body > .margin:first-of-type {
   margin-top: 2em;
 }
 
@@ -127,6 +144,80 @@ body > .margin {
   max-width: 30vh;
   aspect-ratio: 1/1;
   object-fit: cover;
+}
+
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin-right: 5px;
+}
+.icon.small {
+  height: 0.8rem;
+  width: 0.8rem;
+}
+.icon.large {
+  height: 3rem;
+  width: 3rem;
+}
+.icon.responsive {
+  height: 5rem;
+  width: 5rem;
+}
+@media only screen and (max-width: 650px) {
+  .icon.responsive {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+.icon.larger {
+  height: 6rem;
+  width: 6rem;
+}
+.icon.extra-large {
+  height: 9rem;
+  width: 9rem;
+}
+.icon.fill-height {
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+.icon.expand {
+  width: 100%;
+  height: fit-content;
+}
+.icon.expand-contain {
+  width: 100%;
+  height: 100%;
+  transform: scale(80%, 80%);
+}
+.icon.light {
+  -webkit-filter: saturate(0%) brightness(0%) invert(93.3333333333%) opacity(1);
+  filter: saturate(0%) brightness(0%) invert(93.3333333333%) opacity(1);
+  filter: url('data:image/svg+xml;utf8,  <svg xmlns="http://www.w3.org/2000/svg">    <filter id="recolor" color-interpolation-filters="sRGB">      <feColorMatrix type="matrix" values="        0 0 0 0 0.9333333333        0 0 0 0 0.9333333333        0 0 0 0 0.9333333333        0 0 0 1 0      "/>    </filter>  </svg>  #recolor');
+}
+.icon.dark {
+  -webkit-filter: saturate(0%) brightness(0%) invert(16.2745098039%) opacity(1);
+  filter: saturate(0%) brightness(0%) invert(16.2745098039%) opacity(1);
+  filter: url('data:image/svg+xml;utf8,  <svg xmlns="http://www.w3.org/2000/svg">    <filter id="recolor" color-interpolation-filters="sRGB">      <feColorMatrix type="matrix" values="        0 0 0 0 0.1333333333        0 0 0 0 0.1568627451        0 0 0 0 0.1921568627        0 0 0 1 0      "/>    </filter>  </svg>  #recolor');
+}
+.icon.gray-color {
+  -webkit-filter: saturate(0%) brightness(0%) invert(29.2156862745%) opacity(1);
+  filter: saturate(0%) brightness(0%) invert(29.2156862745%) opacity(1);
+  filter: url('data:image/svg+xml;utf8,  <svg xmlns="http://www.w3.org/2000/svg">    <filter id="recolor" color-interpolation-filters="sRGB">      <feColorMatrix type="matrix" values="        0 0 0 0 0.2901960784        0 0 0 0 0.2823529412        0 0 0 0 0.3019607843        0 0 0 1 0      "/>    </filter>  </svg>  #recolor');
+}
+.icon.positive {
+  -webkit-filter: saturate(0%) brightness(0%) invert(64.1176470588%) opacity(1);
+  filter: saturate(0%) brightness(0%) invert(64.1176470588%) opacity(1);
+  filter: url('data:image/svg+xml;utf8,  <svg xmlns="http://www.w3.org/2000/svg">    <filter id="recolor" color-interpolation-filters="sRGB">      <feColorMatrix type="matrix" values="        0 0 0 0 0.4745098039        0 0 0 0 0.8078431373        0 0 0 0 0.4784313725        0 0 0 1 0      "/>    </filter>  </svg>  #recolor');
+}
+.icon.negative {
+  -webkit-filter: saturate(0%) brightness(0%) invert(64.1176470588%) opacity(1);
+  filter: saturate(0%) brightness(0%) invert(64.1176470588%) opacity(1);
+  filter: url('data:image/svg+xml;utf8,  <svg xmlns="http://www.w3.org/2000/svg">    <filter id="recolor" color-interpolation-filters="sRGB">      <feColorMatrix type="matrix" values="        0 0 0 0 0.8078431373        0 0 0 0 0.4745098039        0 0 0 0 0.4745098039        0 0 0 1 0      "/>    </filter>  </svg>  #recolor');
+}
+.icon.html {
+  content: url("../resources/icons/html.svg");
 }
 
 .file-upload {
@@ -191,7 +282,7 @@ nav span {
 nav #burger-menu {
   display: none;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   nav li {
     display: none;
   }
@@ -222,4 +313,7 @@ nav ul {
   padding: 0;
   display: flex;
   flex-direction: row;
+}
+nav .icon {
+  width: 100%;
 }

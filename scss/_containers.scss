@@ -26,6 +26,11 @@
   }
 }
 
+.debug-box {
+  background-color: red;
+  border: solid 2px blue;
+}
+
 .grid {
   display: grid;
   row-gap: $size-s;
@@ -34,6 +39,10 @@
 
   &.home {
     grid-template-columns: 1fr 1fr;
+  }
+
+  &.techstack {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 4fr));
   }
 }
 
@@ -113,11 +122,18 @@
   }
 }
 
+
 .margin {
-  padding: $size-m;
+  padding: $size-l $size-xl;
 }
 
-body>.margin {
+@media only screen and (max-width: 650px) {
+  .margin {
+    padding: $size-m $size-l;
+  }
+}
+
+body>.margin:first-of-type {
   margin-top: $size-l;
 }
 
