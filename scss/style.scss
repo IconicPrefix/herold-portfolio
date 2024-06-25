@@ -54,6 +54,10 @@ nav {
             display: none;
         }
 
+        .menu > li {
+            display: flex;
+        }
+
         #burger-menu {
             display: flex;
         }
@@ -92,6 +96,30 @@ nav {
 
     .icon {
         width: 100%;
+    }
+
+    .menu {
+        flex-direction: column;
+        display: flex;
+        position: absolute;
+        right: 1em;
+        top: 3.5em;
+        width: 70%;
+        background-color: $color-background;
+        padding: 0 $size-m;
+        overflow: hidden;
+        @include transition("ease", all, 0.6s);
+
+
+        &.show {
+            @include box-shadow($color-dark-text);
+            height: 10em
+        }
+
+        &.hidden {
+            @include box-shadow("transparent");
+            height: 0px;
+        }
     }
 }
 
