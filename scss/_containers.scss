@@ -134,7 +134,7 @@
 }
 
 body>.margin:first-of-type {
-  margin-top: $size-l;
+  margin-top: calc($size-l + 2rem);
 }
 
 .portrait {

@@ -136,7 +136,7 @@ body {
   }
 }
 body > .margin:first-of-type {
-  margin-top: 2em;
+  margin-top: calc(2em + 2rem);
 }
 
 .portrait {
