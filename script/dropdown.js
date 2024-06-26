@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $(".icon.burger-menu.dark").on("click", function () {
         $(".menu").toggleClass("show hidden");
+
     });
 
 });

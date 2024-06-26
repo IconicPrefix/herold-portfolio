@@ -18,6 +18,10 @@ nav {
     top: 0px;
     width: 100%;
 
+    a {
+        text-decoration: none;
+    }
+
     &.home {
         transform: translateY(-100%);
         animation: swipedown 1s ease 7s 1 forwards;
@@ -199,11 +203,23 @@ footer {
         color: $color-light-text;
         font-size: $font-xs;
 
-        & > span {
+        & > * > * {
+            color: $color-light-text;
+            font-size: 0.9em;
+        }
+
+        & > * {
             color: $color-light-text;
             font-size: 0.9em;
         }
     }
 
     padding: $size-m 0px;
+}
+
+.hover-icon {
+    @include transition("easeOutExpo", all, 0.35s);
+    &:hover {
+        transform: scale(1.2);
+    }
 }

@@ -345,6 +345,9 @@ nav {
   top: 0px;
   width: 100%;
 }
+nav a {
+  text-decoration: none;
+}
 nav.home {
   transform: translateY(-100%);
   animation: swipedown 1s ease 7s 1 forwards;
@@ -495,7 +498,18 @@ footer > div {
   color: #EEEEEE;
   font-size: 0.75rem;
 }
-footer > div > span {
+footer > div > * > * {
   color: #EEEEEE;
   font-size: 0.9em;
+}
+footer > div > * {
+  color: #EEEEEE;
+  font-size: 0.9em;
+}
+
+.hover-icon {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-icon:hover {
+  transform: scale(1.2);
 }
