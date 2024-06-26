@@ -44,6 +44,12 @@
   &.techstack {
     grid-template-columns: repeat(auto-fit, minmax(100px, 4fr));
   }
+
+  &.card-list {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    row-gap: $size-m  ;
+    column-gap: $size-m ;
+  }
 }
 
 .box {
@@ -142,4 +148,22 @@ body>.margin:first-of-type {
   max-width: 30vh;
   aspect-ratio: 1/1;
   object-fit: cover;
+}
+
+.card-list {
+
+  // padding: 0;
+  .item {
+    @include box-shadow($color-dark-text);
+    // margin: $size-m 0;
+    // background-color: $color-primary;
+    padding: $size-m;
+    list-style: none;
+
+    @include transition("easeOutExpo", all, 0.25s);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }
