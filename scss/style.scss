@@ -232,9 +232,11 @@ footer {
     flex-direction: row;
     overflow-x: scroll;
     border-radius: $size-s;
+    @include box-shadow($color-dark-text);
+    background-color: rgba($color-dark-text, 0.25);
 
     img {
         border-radius: $size-s;
-        margin-right: $size-s;
+        margin: $size-xxs;
     }
 }
