@@ -22,8 +22,16 @@
     font-weight: bold;
   }
 
+  &.no-wrap {
+    text-wrap: nowrap;
+  }
+
   &.center {
     text-align: center;
+  }
+
+  &.light {
+    color: $color-light-text;
   }
 
   &.gray {

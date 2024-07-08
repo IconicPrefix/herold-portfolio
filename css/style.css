@@ -13,8 +13,14 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+.text.no-wrap, .no-wrap.text-secondary, .no-wrap.text-header, .no-wrap.text-subheader, .no-wrap.text-big-header {
+  text-wrap: nowrap;
+}
 .text.center, .center.text-secondary, .center.text-header, .center.text-subheader, .center.text-big-header {
   text-align: center;
+}
+.text.light, .light.text-secondary, .light.text-header, .light.text-subheader, .light.text-big-header {
+  color: #EEEEEE;
 }
 .text.gray, .gray.text-secondary, .gray.text-header, .gray.text-subheader, .gray.text-big-header {
   color: #4a484d;
@@ -55,59 +61,56 @@ body {
 
 .box {
   display: flex;
-  border-width: 0.15em;
   padding: 0.25em 0.5em;
   border-radius: 0.5em;
-  padding: 0.5em 1em;
+  padding: 0;
 }
 .box.v {
   flex-direction: column;
 }
 .box.panel, .box.panel-dashed, .box.panel-primary {
-  border-width: 0.15em;
   padding: 0.25em 0.5em;
   border-radius: 0.5em;
   padding: 0.5em 1em;
 }
 .box.panel-primary {
-  background-color: #B7C4CF;
+  color: #EEEEEE;
+  background-color: #222831;
 }
 .box.panel-dashed {
   border-style: dashed;
   border-color: #222831;
 }
 .box.panel.xs, .box.xs.panel-primary, .box.xs.panel-dashed {
-  border-width: 0.15em;
   padding: 0.25em 0.5em;
   border-radius: 0.5em;
   padding: 0.125em 0.25em;
 }
 .box.panel.s, .box.s.panel-primary, .box.s.panel-dashed {
-  border-width: 0.15em;
   padding: 0.25em 0.5em;
   border-radius: 0.5em;
   padding: 0.25em 0.5em;
 }
 .box.panel.m, .box.m.panel-primary, .box.m.panel-dashed {
-  border-width: 0.15em;
   padding: 0.25em 0.5em;
   border-radius: 0.5em;
   padding: 0.5em 1em;
 }
 .box.panel.l, .box.l.panel-primary, .box.l.panel-dashed {
-  border-width: 0.15em;
   padding: 0.25em 0.5em;
   border-radius: 0.5em;
   padding: 1em 2em;
 }
 .box.panel.xl, .box.xl.panel-primary, .box.xl.panel-dashed {
-  border-width: 0.15em;
   padding: 0.25em 0.5em;
   border-radius: 0.5em;
   padding: 2em 4em;
 }
 .box.full-height {
   height: 80vh;
+}
+.box.grow {
+  flex-grow: 2;
 }
 .box.align-center {
   align-items: center;
@@ -527,4 +530,17 @@ footer > div > * {
 }
 .hover-icon:hover {
   transform: scale(1.2);
+}
+
+.carousel {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  border-radius: 0.5em;
+}
+.carousel img {
+  border-radius: 0.5em;
+  margin-right: 0.5em;
 }

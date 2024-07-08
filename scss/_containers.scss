@@ -1,6 +1,6 @@
-@mixin card-panel($size: "normal") {
+@mixin card-panel($size: "none") {
   // border-style: auto;
-  border-width: calc($size-xs - 0.1em);
+  // border-width: calc($size-xs - 0.1em);
   padding: $size-xs $size-s;
   // border-color: au;
   border-radius: $size-s;
@@ -23,6 +23,10 @@
 
   @else if $size =="extra-large" {
     padding: $size-l $size-xl;
+  }
+
+  @else if $size =="none" {
+    padding: 0;
   }
 }
 
@@ -47,7 +51,7 @@
 
   &.card-list {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    row-gap: $size-m  ;
+    row-gap: $size-m ;
     column-gap: $size-m ;
   }
 }
@@ -65,6 +69,7 @@
 
     &-primary {
       @extend .panel;
+      color: $color-light-text;
       background-color: $color-primary;
     }
 
@@ -73,6 +78,8 @@
       border-style: dashed;
       border-color: $color-dark-text;
     }
+
+    
 
     &.xs {
       @include card-panel("extra-small");
@@ -97,6 +104,10 @@
 
   &.full-height {
     height: 80vh;
+  }
+
+  &.grow {
+    flex-grow: 2;
   }
 
   &.align-center {
