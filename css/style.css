@@ -235,52 +235,52 @@ body > .margin:first-of-type {
   filter: url('data:image/svg+xml;utf8,  <svg xmlns="http://www.w3.org/2000/svg">    <filter id="recolor" color-interpolation-filters="sRGB">      <feColorMatrix type="matrix" values="        0 0 0 0 0.8078431373        0 0 0 0 0.4745098039        0 0 0 0 0.4745098039        0 0 0 1 0      "/>    </filter>  </svg>  #recolor');
 }
 .icon.html {
-  content: url("../resources/icons/html.svg");
+  content: url(" resources/icons/html.svg");
 }
 .icon.css {
-  content: url("../resources/icons/css.svg");
+  content: url(" resources/icons/css.svg");
 }
 .icon.sass {
-  content: url("../resources/icons/sass.svg");
+  content: url(" resources/icons/sass.svg");
 }
 .icon.javascript {
-  content: url("../resources/icons/javascript.svg");
+  content: url(" resources/icons/javascript.svg");
 }
 .icon.jquery {
-  content: url("../resources/icons/jquery.svg");
+  content: url(" resources/icons/jquery.svg");
 }
 .icon.mysql {
-  content: url("../resources/icons/mysql.svg");
+  content: url(" resources/icons/mysql.svg");
 }
 .icon.java {
-  content: url("../resources/icons/java.svg");
+  content: url(" resources/icons/java.svg");
 }
 .icon.php {
-  content: url("../resources/icons/php.svg");
+  content: url(" resources/icons/php.svg");
 }
 .icon.python {
-  content: url("../resources/icons/python.svg");
+  content: url(" resources/icons/python.svg");
 }
 .icon.godot {
-  content: url("../resources/icons/godot.svg");
+  content: url(" resources/icons/godot.svg");
 }
 .icon.c {
-  content: url("../resources/icons/c.svg");
+  content: url(" resources/icons/c.svg");
 }
 .icon.c-sharp {
-  content: url("../resources/icons/c-sharp.svg");
+  content: url(" resources/icons/c-sharp.svg");
 }
 .icon.burger-menu {
-  content: url("../resources/icons/burger-menu.svg");
+  content: url(" resources/icons/burger-menu.svg");
 }
 .icon.code {
-  content: url("../resources/icons/code.svg");
+  content: url(" resources/icons/code.svg");
 }
 .icon.down-arrow {
-  content: url("../resources/icons/down-arrow.svg");
+  content: url(" resources/icons/down-arrow.svg");
 }
 .icon.circle-dashed {
-  content: url("../resources/icons/circle-dashed.svg");
+  content: url(" resources/icons/circle-dashed.svg");
 }
 
 .hovering-anim {
