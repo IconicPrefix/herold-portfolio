@@ -54,13 +54,17 @@ nav {
     }
 
     @media only screen and (max-width: 650px) {
+
+
         li {
             display: none;
         }
 
-        .burger-menu>li {
+        .menu>*>li {
             display: flex;
         }
+
+
 
         #burger-menu {
             display: flex;
@@ -225,15 +229,23 @@ footer {
     }
 }
 
+
+
 .carousel {
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
     border-radius: $size-s;
     @include box-shadow($color-dark-text);
     background-color: rgba($color-dark-text, 0.25);
+
+    @media only screen and (max-width: 650px) {
+
+        height: 50vw;
+
+    }
 
     img {
         border-radius: $size-s;
