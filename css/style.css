@@ -396,7 +396,7 @@ nav #burger-menu {
   nav li {
     display: none;
   }
-  nav .menu > li {
+  nav .burger-menu > li {
     display: flex;
   }
   nav #burger-menu {
