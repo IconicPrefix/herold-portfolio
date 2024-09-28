@@ -1,6 +1,6 @@
 name: "Build + Test"
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   message:
@@ -10,4 +10,4 @@ jobs:
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: https://discord.com/api/webhooks/1289489051166048297/tf92BzPVbTjURawWB4JA6wRTmZ-Elsql2xC3nspaCk-50_JgjrYanNgGqAAnvnskYSLq
-        content: "Test"
+        content: "Test ${{ github.event.head_commit.message }} dww"
