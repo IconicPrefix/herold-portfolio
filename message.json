@@ -1,4 +1,4 @@
 {
   "content": " ",
-  "embeds": [{"title":"${{ github.event.head_commit.message }}","description":" LMAO :sparkles:"}]
+  "embeds": [{"title":${{ github.event.head_commit.message }},"description":" LMAO :sparkles:"}]
 }
