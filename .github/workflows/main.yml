@@ -1,25 +1,13 @@
 name: "Build + Test"
 on:
-  pull_request:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  build: # make sure build/ci work properly
+  message:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: |
-          npm install
-      - run: |
-          npm run all
-  test: # make sure the action works on a clean machine without building
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Basic Content Test
-        uses: ./
-        with:
-          webhook-url: ${{ secrets.WEBHOOK_URL }}
-          content: test
+    - name: Discord Webhook Action
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: https://discord.com/api/webhooks/1289489051166048297/tf92BzPVbTjURawWB4JA6wRTmZ-Elsql2xC3nspaCk-50_JgjrYanNgGqAAnvnskYSLq
+        content: "Test"
