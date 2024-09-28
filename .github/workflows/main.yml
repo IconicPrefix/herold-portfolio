@@ -1,18 +1,25 @@
-name: Discord Webhook Action
-
+name: "Build + Test"
 on:
+  pull_request:
   push:
     branches:
-    - main
+      - main
 
 jobs:
-  build:
+  build: # make sure build/ci work properly
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          npm install
+      - run: |
+          npm run all
+  test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Basic Content Test
         uses: ./
         with:
-          webhook-url: https://discord.com/api/webhooks/1289489051166048297/tf92BzPVbTjURawWB4JA6wRTmZ-Elsql2xC3nspaCk-50_JgjrYanNgGqAAnvnskYSLq
+          webhook-url: ${{ secrets.WEBHOOK_URL }}
           content: test
-            
